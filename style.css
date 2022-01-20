@@ -171,6 +171,7 @@ a{
     cursor: pointer;
     font-size: 2rem;
     transition: 100ms background-color ease-in-out;
+    user-select: none;
 }
 
 .todo-container span:nth-child(2):hover{
@@ -193,6 +194,7 @@ a{
     cursor: pointer;
     font-size: 2rem;
     transition: 100ms background-color ease-in-out;
+    user-select: none;
 }
 
 .todo-container span:nth-child(3):hover{
