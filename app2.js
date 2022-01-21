@@ -33,6 +33,22 @@ text_input.addEventListener("keydown", (e)=>{
 })
 
 
+// ----Checking the input for no value----
+input_add.addEventListener("click", ()=>{
+
+    if(text_input.value === "")
+    {
+        text_input.classList.add("red-border")
+    }
+})
+text_input.addEventListener("keyup", ()=>{
+    if(text_input.value !== "")
+    {
+        text_input.classList.remove("red-border")
+    }
+})
+
+
 
 // -----Add todo button-----
 
@@ -40,15 +56,16 @@ let id_counter = 0
 
 input_add.addEventListener("click", add_todo)
 
-function add_todo(content, id) {
+function add_todo() {
+
+    if(text_input.value === "") return
 
     // creating an object everytime the add buttons is clicked
 
     let myobj = {
         content: text_input.value,
         id: id_counter++,
-        strike_status: false,
-        // done_anim_status: false
+        strike_status: false
     }
 
 
@@ -101,14 +118,8 @@ function get_from_ls() {
     todos.forEach(element => {
 
         let temp;
-        // if(element.strike_status == "true"){
-        //     temp = "strike"
-        // } else{
-        //     temp = ""
-        // }
 
-
-        todo_section.innerHTML += `<div class="todo-container" id="${element.id}">
+        todo_section.innerHTML += `<div class="todo-container ${element.strike_status == "true"?"done-animation" : ""}" id="${element.id}">
     <p class="todo-para ${element.strike_status == "true"?"strike" : ""}">${element.content}</p>
     <span class="material-icons">done</span>
     <span class="material-icons">delete</span>
@@ -126,6 +137,8 @@ todo_section.addEventListener("click", (e) => {
     if (e.target.textContent === "delete") {
 
         e.target.parentElement.classList.add("delete-animation")
+
+        // calling the delete function after 400ms to allow the animation to be visible
         setTimeout(() => {
             
             del_todo(e.target.parentElement)
@@ -178,10 +191,20 @@ function done_todo(parentElement) {
         parentElement.children[0].classList.add("strike")
     }
 
+    // making the change scale animation in DOM
+    if (parentElement.classList.contains("done-animation")) {
+        parentElement.classList.remove("done-animation")
+    }
+    else {
+        parentElement.classList.add("done-animation")
+    }
+
 
     let todos = JSON.parse(localStorage.getItem("todos"))
     for (let index = 0; index < todos.length; index++) {
         if (todos[index].id == parentElement.id) {
+
+            // adding the strike_status value to the local storage
             if(parentElement.children[0].classList.contains("strike"))
             {
                 todos[index].strike_status = "true"
@@ -189,11 +212,13 @@ function done_todo(parentElement) {
             else{
                 todos[index].strike_status = "false"
             }
+
+
         }
 
     }
 
     localStorage.setItem("todos", JSON.stringify(todos))
 
-    parentElement.classList.toggle("done-animations")
+    
 }
