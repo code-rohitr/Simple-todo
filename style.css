@@ -226,18 +226,25 @@ a{
 
 
 /* todo para delete animation */
+
+.done-animation{
+    transform: scale(0.9, 0.9);
+    transition: 200ms transform ease-in-out, 200ms opacity ease-in-out;
+    opacity: 0.7;
+}
+
 .delete-animation{
     transform: translateX(20vw);
     opacity: 0.1;
     transition: 400ms transform ease-in-out, 400ms opacity ease-in-out;
 }
 
-.done-animation{
-    transform: scale(0.9, 0.9);
-    transition: 200ms transform ease-in-out;
-}
-
 .strike{
     text-decoration: line-through;
     opacity: 0.5;
 }
+
+.red-border{
+    border: 3px solid red;
+}
+
