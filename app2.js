@@ -24,6 +24,15 @@ input_clear.addEventListener("click", () => {
 })
 
 
+// Adding the add todo function when preseed enter
+text_input.addEventListener("keydown", (e)=>{
+    if(e.key === "Enter")
+    {
+        add_todo()
+    }
+})
+
+
 
 // -----Add todo button-----
 
@@ -38,7 +47,8 @@ function add_todo(content, id) {
     let myobj = {
         content: text_input.value,
         id: id_counter++,
-        strike_status: false
+        strike_status: false,
+        // done_anim_status: false
     }
 
 
@@ -114,16 +124,22 @@ function get_from_ls() {
 todo_section.addEventListener("click", (e) => {
 
     if (e.target.textContent === "delete") {
-        del_todo(e.target.parentElement)
+
+        e.target.parentElement.classList.add("delete-animation")
+        setTimeout(() => {
+            
+            del_todo(e.target.parentElement)
+        }, 400);
     }
 
     else if (e.target.textContent === "done") {
+        // e.target.parentElement.classList.toggle("done-animation")
         done_todo(e.target.parentElement)
     }
 })
 
 
-// ----Deleting items from local storage and dom----
+// ----Deleting items from local storage and DOM----
 
 function del_todo(parentElement) {
 
@@ -154,7 +170,7 @@ function del_todo(parentElement) {
 
 function done_todo(parentElement) {
 
-    // making the changes in DOM
+    // making the strike animation changes in DOM
     if (parentElement.children[0].classList.contains("strike")) {
         parentElement.children[0].classList.remove("strike")
     }
@@ -178,4 +194,6 @@ function done_todo(parentElement) {
     }
 
     localStorage.setItem("todos", JSON.stringify(todos))
+
+    parentElement.classList.toggle("done-animations")
 }

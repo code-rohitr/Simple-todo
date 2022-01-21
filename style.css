@@ -11,7 +11,7 @@ body{
     padding: 0;
     margin: 0;
     height: 100vh;
-    background-color: #2d3436;
+    background-color: #ffdcc3;
 }
 
 a{
@@ -31,7 +31,7 @@ a{
 
 .header h1{
     font-family: 'Montserrat', sans-serif;
-    color: rgb(170, 102, 238);
+    color: #FE4365;
     font-size: 4rem;
     
 }
@@ -150,7 +150,7 @@ a{
     height: auto;
     border: none;
     /* border: 2px solid white; */
-    background-color: #636e72;
+    background-color: #ff8480 ;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -159,9 +159,10 @@ a{
 
 .todo-container span:nth-child(2){
     position: absolute;
-    right: -50px;
+    left: -50px;
     top: 0px;
-    background-color: #74b9ff;
+    /* background-color: #FC9D9A ; */
+    background-color: #ff8480 ;
     height: 50px;
     width: 50px;
     display: flex;
@@ -170,21 +171,24 @@ a{
     color: white;
     cursor: pointer;
     font-size: 2rem;
-    transition: 100ms background-color ease-in-out;
+    transition: 100ms background-color ease-in-out, 100ms color ease-in-out;
     user-select: none;
+    border-radius: 100px  0 0 100px;
 }
 
 .todo-container span:nth-child(2):hover{
     background-color: #0984e3;
+    color: white;
 
 }
 
 
+
 .todo-container span:nth-child(3){
     position: absolute;
-    right: -100px;
+    right: -50px;
     top: 0px;
-    background-color: #ff7675;
+    background-color: #ff8480 ;
     height: 50px;
     width: 50px;
     display: flex;
@@ -193,12 +197,14 @@ a{
     color: white;
     cursor: pointer;
     font-size: 2rem;
-    transition: 100ms background-color ease-in-out;
+    transition: 100ms background-color ease-in-out,100ms color ease-in-out;
     user-select: none;
+    border-radius: 0 100px 100px 0;
 }
 
 .todo-container span:nth-child(3):hover{
     background-color: #d63031;
+    color: white;
 }
 
 
@@ -218,6 +224,18 @@ a{
     margin: 0px ;
 }
 
+
+/* todo para delete animation */
+.delete-animation{
+    transform: translateX(20vw);
+    opacity: 0.1;
+    transition: 400ms transform ease-in-out, 400ms opacity ease-in-out;
+}
+
+.done-animation{
+    transform: scale(0.9, 0.9);
+    transition: 200ms transform ease-in-out;
+}
 
 .strike{
     text-decoration: line-through;
