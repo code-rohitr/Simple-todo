@@ -49,6 +49,25 @@ a{
     flex-direction: column;
 }
 
+/* animating the main text input when the page loads/reloads */
+
+.animate-main-on-reload{
+    animation: mainFadeup 500ms ease-in-out;
+}
+
+@keyframes mainFadeup {
+    from{
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+}
+
 
 
 .input-container{
@@ -143,7 +162,10 @@ a{
     background-color: #ffa801;
 }
 
-/* todi container */
+
+/* -------To-DO conatiner section------- */
+
+/* todo container */
 
 .todo-container{
     height: 70px;
@@ -157,6 +179,26 @@ a{
 .todo-section{
     width: 35%;
     margin: 0 auto;
+}
+
+/* animating the todo container when the page loads/reloads */
+.animate-todos-container-on-relaod{
+    animation-name: todosFadeup;
+    animation-timing-function: ease-in-out;
+    animation-duration: 500ms;
+    -o-animation-delay: 200ms;
+}
+
+@keyframes todosFadeup {
+    from{
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to{
+        opacity: 1;
+        tranform: translateY(0px)
+    }
+    
 }
 
 .todo-container{

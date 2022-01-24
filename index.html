@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,17 +20,15 @@
     <script src="./app2.js" defer></script>
 
     <!-- icon stylesheet -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-      <!-- Animate on Scroll library api-->
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
 
-    <script defer>
-        AOS.init();
-      </script>
+    <!-- Animate on Scroll CSS CDN-->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
 </head>
+
 <body>
 
     <section class="header">
@@ -38,37 +37,43 @@
 
 
     <!-- input section -->
-    <section class="main-container">
+    <section class="main-container animate-main-on-reload">
         <div class="input-container" id="input-container">
             <input type="text" placeholder="Enter to-do" class="text-input">
             <span class="material-icons input-clear">close</span>
             <span class="material-icons input-add">add</span>
-                
+
         </div>
     </section>
 
 
     <!-- todo section -->
 
-    <section class="todo-section" id="todo-section">
+    <section class="todo-section animate-todos-container-on-relaod" id="todo-section">
 
-        <!-- <div class="todo-container">
+        <!-- <div class="todo-container" data-aos="fade-up">
             <p class="todo-para">wdawdasdasd</p>
             <span class="material-icons">done</span>
             <span class="material-icons">delete</span>
         </div>
 
-        <div class="todo-container">
+        <div class="todo-container" data-aos="fade-up">
             <p class="todo-para">awdadsdawd</p>
             <span class="material-icons">done</span>
             <span class="material-icons">delete</span>
         </div>
 
-        <div class="todo-container">
+        <div class="todo-container" data-aos="fade-up">
             <p class="todo-para ">sdfsdf</p>
             <span class="material-icons">done</span>
             <span class="material-icons">delete</span>
         </div> -->
+
     </section>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+        AOS.init();
+    </script>
 </body>
+
 </html>
