@@ -22,11 +22,18 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 
+      <!-- Animate on Scroll library api-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js" defer></script>
+
+    <script defer>
+        AOS.init();
+      </script>
+
 </head>
 <body>
 
     <section class="header">
-        <h1>To-Do App</h1>
+        <h1>Simple Todo ☺</h1>
     </section>
 
 
@@ -35,7 +42,8 @@
         <div class="input-container" id="input-container">
             <input type="text" placeholder="Enter to-do" class="text-input">
             <span class="material-icons input-clear">close</span>
-            <button class="input-btn">Add</button>
+            <span class="material-icons input-add">add</span>
+                
         </div>
     </section>
 

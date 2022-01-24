@@ -2,8 +2,8 @@
 
 // the input section elements
 const text_input = document.querySelector(".input-container > input")
-const input_clear = document.querySelector(".input-container > span")
-const input_add = document.querySelector(".input-container > button")
+const input_clear = document.querySelector(".input-clear")
+const input_add = document.querySelector(".input-add")
 
 // the section where the to-do sections will get added 
 const todo_section = document.querySelector("#todo-section")
@@ -131,9 +131,9 @@ function get_from_ls() {
 
 }
 
-// Event listener for the trash button
 todo_section.addEventListener("click", (e) => {
-
+    
+    // Event listener for the trash button
     if (e.target.textContent === "delete") {
 
         e.target.parentElement.classList.add("delete-animation")
@@ -145,6 +145,7 @@ todo_section.addEventListener("click", (e) => {
         }, 400);
     }
 
+    // Event listener for the done button
     else if (e.target.textContent === "done") {
         // e.target.parentElement.classList.toggle("done-animation")
         done_todo(e.target.parentElement)
@@ -162,7 +163,6 @@ function del_todo(parentElement) {
 
 
     for (let index = 0; index < todos.length; index++) {
-        // console.log(todos[index].id);
 
         if (todos[index].id == parentElement.id) {
             todos.splice(index, 1)
