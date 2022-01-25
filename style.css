@@ -30,7 +30,7 @@ body{
   }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: red;
+    background: #f53b57;
     opacity: 1;
   }  
 
