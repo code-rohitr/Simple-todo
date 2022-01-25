@@ -336,3 +336,100 @@ a{
     border: 3px solid red;
 }
 
+/* ------=======Media Queries------======= */
+
+
+
+@media only screen and (max-width:1024px){
+    .todo-section{
+        width: 50%;
+    }
+}
+
+
+@media only screen and (max-width:510px){
+    .header h1{
+        font-size: 3.9rem;
+    }
+
+    .todo-section{
+        width: 60%;
+    }
+
+    .main-container{
+        height: 20vh;
+    }
+}
+
+
+@media only screen and (max-width:480px){
+    .header h1{
+        font-size: 3.6rem;
+    }
+    .todo-section{
+        width: 65%;
+    }
+}
+
+@media only screen and (max-width:440px){
+    .header h1{
+        font-size: 3.4rem;
+    }
+
+}
+
+
+
+@media only screen and (max-width:427px){
+    
+    .header h1{
+        font-size: 3.2rem;
+    }
+
+    .main-container{
+        height: 14vh;
+        width: 95%;
+    }
+
+    .todo-section{
+        width: 70%;
+    }
+}
+
+@media only screen and (max-width:397px){
+    .header h1{
+        font-size: 3rem;
+    }
+
+}
+
+@media only screen and (max-width:376px){
+    .header h1{
+        font-size: 2.8rem;
+    }
+
+    .main-container{
+        width: 95%;
+    }
+
+    .text-input{
+        width: 100%;
+    }
+
+    .input-container span{
+        font-size: 32px;
+    }
+
+}
+
+
+@media only screen and (max-width:321px){
+
+    .header h1{
+        font-size: 2.5rem;
+    }
+    .todo-section{
+        width: 65%;
+    }
+
+}
