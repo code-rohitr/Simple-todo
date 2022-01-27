@@ -1,5 +1,7 @@
 // -------------variables------------- 
 
+
+
 // the input section elements
 const text_input = document.querySelector(".input-container > input")
 const input_clear = document.querySelector(".input-clear")

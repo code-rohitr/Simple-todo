@@ -5,7 +5,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>To-Do App</title>
+    <title>Simple Todo</title>
+
+    <!-- adding the browser tab icon -->
+    <link rel="icon" href="./todo_icon.png">
 
     <!-- css sheet -->
     <link rel="stylesheet" href="./style.css">
@@ -19,12 +22,21 @@
     <!-- app2.js file -->
     <script src="./app2.js" defer></script>
 
+    <!-- add theme color for PWA -->
+    <meta name="theme_color" content="#fff">
+
     <!-- icon stylesheet -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
+    <!-- manifest file -->
+    <link rel="manifest" href="./manifest.json">
 
     <!-- Animate on Scroll CSS CDN-->
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+    <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
+
+
+    <!-- add the appple touch icon -->
+    <!-- <link rel="appple-touch-icon" href="./icons/manifest-icon-192.maskable.png"> -->
 
 
 </head>
@@ -70,10 +82,24 @@
         </div> -->
 
     </section>
-    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <!-- <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
         AOS.init();
+    </script> -->
+
+
+
+    <!-- Service worker -->
+    <script>
+        // Check that service workers are supported
+        if ('serviceWorker' in navigator) {
+            // Use the window load event to keep the page load performant
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/service-worker.js');
+            });
+        }
     </script>
+
 </body>
 
 </html>

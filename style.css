@@ -53,6 +53,7 @@ a{
     font-family: 'Montserrat', sans-serif;
     color: #EE4540;
     font-size: 4rem;
+    /* filter: drop-shadow(10px 10px 10px #f53b578c); */
     
 }
 
