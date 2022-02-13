@@ -28,8 +28,6 @@
     <!-- icon stylesheet -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <!-- manifest file -->
-    <link rel="manifest" href="./manifest.json">
 
     <!-- Animate on Scroll CSS CDN-->
     <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
@@ -63,6 +61,8 @@
 
     <section class="todo-section animate-todos-container-on-relaod" id="todo-section">
 
+        <h3 class="no-todos">You don't have any To-Do</h3>
+
         <!-- <div class="todo-container" data-aos="fade-up">
             <p class="todo-para">wdawdasdasd</p>
             <span class="material-icons">done</span>
@@ -86,19 +86,6 @@
     <script>
         AOS.init();
     </script> -->
-
-
-
-    <!-- Service worker -->
-    <script>
-        // Check that service workers are supported
-        if ('serviceWorker' in navigator) {
-            // Use the window load event to keep the page load performant
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/service-worker.js');
-            });
-        }
-    </script>
 
 </body>
 

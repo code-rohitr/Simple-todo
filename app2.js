@@ -18,6 +18,8 @@ window.onload = () => {
 }
 
 
+
+
 // -----Adding the clear input box feature-----
 
 input_clear.addEventListener("click", () => {
@@ -56,6 +58,7 @@ text_input.addEventListener("keyup", ()=>{
 
 let id_counter = 0
 
+
 input_add.addEventListener("click", add_todo)
 
 function add_todo() {
@@ -83,6 +86,10 @@ function add_todo() {
     add_to_ls(myobj)
 
 
+    // checking if the todo container has no todos and removing the warning if todos are present
+    if(todo_section.children.length > 0){
+        document.querySelector(".no-todos").style.cssText = "display: none"
+    }
 
     // clear input box
     text_input.value = ""
@@ -109,6 +116,7 @@ function add_to_ls(todo) {
 
 }
 
+// If no todos are present in the todo container
 
 
 // --------Getting all the elements from the local storage and printing it top the dom--------
@@ -117,6 +125,16 @@ function add_to_ls(todo) {
 function get_from_ls() {
 
     let todos = JSON.parse(localStorage.getItem("todos"))
+
+    //displaying the message if no todos are present in the container
+    if(todos.length == 0){
+       document.querySelector(".no-todos").style.cssText += "display: inherit; text-align: center"
+    }
+    else{
+        document.querySelector(".no-todos").style.cssText += "display: none"
+    }
+
+    // adding the individual objects to the DOM
     todos.forEach(element => {
 
         let temp;
@@ -130,9 +148,12 @@ function get_from_ls() {
         id_counter = element.id + 1
     });
 
+    
 
 }
 
+
+// adding event listeners to the indiviual todo to implement the done and delete feature
 todo_section.addEventListener("click", (e) => {
     
     // Event listener for the trash button
@@ -224,3 +245,6 @@ function done_todo(parentElement) {
 
     
 }
+
+
+

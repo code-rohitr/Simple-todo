@@ -11,8 +11,15 @@ body{
     padding: 0;
     margin: 0;
     height: 100vh;
-    background-color: #FFE6E6;
+    background-color: var(--bg);
 }
+
+:root{
+    --main-color: #54B9B8;
+    --main-hover: #2c9290;
+    --bg: #F7ECDE;
+}
+
 
 /* customizing the scroll bar */
 ::-webkit-scrollbar {
@@ -24,13 +31,13 @@ body{
   }
   
 ::-webkit-scrollbar-thumb {
-    background: #f53b57;
+    background: var(--main-color);
     border-radius: 100px;
     opacity: 0.7;
   }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #f53b57;
+    background: var(--main-color);
     opacity: 1;
   }  
 
@@ -51,11 +58,12 @@ a{
 
 .header h1{
     font-family: 'Montserrat', sans-serif;
-    color: #EE4540;
+    color: var(--main-color);
     font-size: 4rem;
     /* filter: drop-shadow(10px 10px 10px #f53b578c); */
     
 }
+
 
 /* input section */
 
@@ -141,7 +149,7 @@ a{
 
 
 .input-container span{
-    background-color: #FF4057;
+    background-color: var(--main-color);
     font-size: 38px;
     display: flex;
     align-items: center;
@@ -157,12 +165,12 @@ a{
 }
 
 .input-container span:hover{
-    background-color: #d63031;
+    background-color: var(--main-color);
 }
 
 .input-container span:nth-child(2){
     background-color: white;
-    color: #FF4057;
+    color: var(--main-color);
 }
 
 .input-container span:nth-child(2):hover{
@@ -195,6 +203,17 @@ a{
 /* -------To-DO conatiner section------- */
 
 /* todo container */
+
+.no-todos{
+    /* border: 2px solid red; */
+    text-align: center;
+    font-size: 1.5rem;
+    font-family: 'Montserrat', sans-serif;
+    color: var(--main-color);
+    opacity: 0.5;
+    user-select: none;
+}
+
 
 .todo-container{
     height: 70px;
@@ -236,7 +255,7 @@ a{
     height: auto;
     border: none;
     /* border: 2px solid white; */
-    background-color: #f53b57 ;
+    background-color: var(--main-color) ;
     display: flex;
     align-items: center;
     justify-content: left;
@@ -251,7 +270,7 @@ a{
     left: -50px;
     top: 0px;
     /* background-color: #FC9D9A ; */
-    background-color: #f53b57 ;
+    background-color: var(--main-color) ;
     height: 100%;
     width: 50px;
     display: flex;
@@ -266,7 +285,7 @@ a{
 }
 
 .todo-container span:nth-child(2):hover{
-    background-color: #66BB6A;
+    background-color: var(--main-hover);
     color: white;
 }
 
@@ -276,7 +295,7 @@ a{
     position: absolute;
     right: -50px;
     top: 0px;
-    background-color: #f53b57 ;
+    background-color: var(--main-color) ;
     height: 100%;
     width: 50px;
     display: flex;
@@ -291,7 +310,7 @@ a{
 }
 
 .todo-container span:nth-child(3):hover{
-    background-color: #d63031;
+    background-color: var(--main-hover);
     color: white;
 }
 
